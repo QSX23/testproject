@@ -30,39 +30,19 @@ func ReadData(file *os.File) [][]string {
 	return data
 }
 
-//ParseLines takes each line and assigns the values to each animal
-func ParseLines(lines [][]string) []Person {
-	m := make([]Person, len(lines[0]))
-
-	for int := 1; int < 7; int++ {
-		id := lines[0][int]
-		m[int] = Person{
-			id: id,
-		}
-
-		for _, line := range lines {
-			t, err := strconv.Atoi(line[int])
-			if err != nil {
-				t = 0
-			}
-			d := Data{
-				time: line[0],
-				num:  t,
-			}
-			m[int].value = append(m[int].value, d)
-		}
-	}
-
-	return m
-}
-
 func main() {
 	file := ImportCSVFile("placeholder.csv")
 	data := ReadData(file)
 	people := ParseLines(data)
 
-	for _, v := range people {
+	//iteratation testing
+	/*for _, v := range people {
+		for _, x := range v.value {
+			fmt.Println(x)
+		}
 		fmt.Println(v)
-	}
+	}*/
+
+	GraphData(people)
 
 }

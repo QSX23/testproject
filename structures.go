@@ -2,7 +2,7 @@ package main
 
 //Data is a struct that holds the time and the value
 type Data struct {
-	time string
+	time int
 	num  int
 }
 
