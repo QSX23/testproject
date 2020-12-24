@@ -1,0 +1,13 @@
+# Compiled source #
+*.exe
+
+
+#images#
+*.png
+
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
