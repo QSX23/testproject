@@ -8,7 +8,7 @@ import (
 )
 
 //GraphData just plots the data for the first 2 people in the set
-func GraphData(x []Person) {
+func GraphData(x []Person, s string) {
 
 	p, err := plot.New()
 	if err != nil {
@@ -29,7 +29,7 @@ func GraphData(x []Person) {
 		panic(err)
 	}
 
-	if err := p.Save(10*vg.Inch, 8*vg.Inch, "test.png"); err != nil {
+	if err := p.Save(10*vg.Inch, 8*vg.Inch, s+".png"); err != nil {
 		panic(err)
 	}
 
